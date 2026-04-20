@@ -12,6 +12,7 @@
             --card-bg: #ffffff;
             --text-color: #374151;
             --light-text: #6b7280;
+            --focus-ring: #111827;
         }
 
         body {
@@ -21,6 +22,30 @@
             background-color: var(--bg-color);
             margin: 0;
             padding: 0;
+        }
+
+        .skip-link {
+            position: absolute;
+            left: -999px;
+            top: 0;
+            background: #111827;
+            color: #ffffff;
+            padding: 0.75rem 1rem;
+            border-radius: 0 0 8px 0;
+            z-index: 1000;
+        }
+
+        .skip-link:focus {
+            left: 0;
+        }
+
+        a:focus-visible,
+        button:focus-visible,
+        input:focus-visible,
+        textarea:focus-visible,
+        select:focus-visible {
+            outline: 3px solid var(--focus-ring);
+            outline-offset: 2px;
         }
 
         header {
@@ -71,11 +96,315 @@
             gap: 2rem;
         }
 
+        .briefing-note {
+            background: #fff7ed;
+            border-left: 4px solid #ea580c;
+            border-radius: 8px;
+            padding: 1rem 1.25rem;
+            margin-bottom: 2rem;
+        }
+
+        .briefing-note p {
+            margin: 0;
+        }
+
+        .briefing-note p + p {
+            margin-top: 0.9rem;
+        }
+
+        .briefing-subsection {
+            margin-top: 2.2rem;
+        }
+
+        .briefing-subsection h3 {
+            color: #111827;
+            margin: 0 0 0.9rem 0;
+            font-size: 1.35rem;
+        }
+
+        .briefing-subsection > p {
+            margin: 0 0 1.2rem 0;
+        }
+
         .card {
             background: var(--card-bg);
             border-radius: 8px;
             padding: 2rem;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h3 {
+            margin-top: 0;
+        }
+
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .kpi-pill {
+            background: #ffffff;
+            border: 1px solid #d1d5db;
+            border-left: 4px solid var(--primary-color);
+            border-radius: 8px;
+            padding: 0.9rem 1rem;
+            font-weight: 600;
+            color: #1f2937;
+        }
+
+        .kpi-explainer {
+            margin-top: 1.5rem;
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 1.25rem;
+        }
+
+        .kpi-explainer h4 {
+            margin: 0 0 0.75rem 0;
+            color: #111827;
+        }
+
+        .kpi-explainer p {
+            margin: 0 0 0.9rem 0;
+        }
+
+        .kpi-explainer ul {
+            margin: 0;
+            padding-left: 1.2rem;
+            line-height: 1.75;
+        }
+
+        .insight-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .insight-card {
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 1.25rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+        }
+
+        .insight-card h4 {
+            margin: 0 0 0.75rem 0;
+            color: #111827;
+            font-size: 1rem;
+        }
+
+        .insight-card ul {
+            margin: 0;
+            padding-left: 1.2rem;
+            line-height: 1.7;
+        }
+
+        .insight-highlight {
+            margin-top: 1.25rem;
+            background: #eff6ff;
+            border-left: 4px solid #2563eb;
+            border-radius: 8px;
+            padding: 1rem 1.1rem;
+        }
+
+        .insight-highlight p {
+            margin: 0;
+        }
+
+        /* Product Discovery Section */
+        .pd-intro {
+            background: #eef2ff;
+            border-left: 4px solid #4f46e5;
+            border-radius: 8px;
+            padding: 1rem 1.25rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .pd-intro p {
+            margin: 0;
+        }
+
+        .pd-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.2rem;
+            margin-top: 1rem;
+        }
+
+        .pd-card {
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 1.25rem;
+        }
+
+        .pd-card h3 {
+            margin: 0 0 0.75rem 0;
+            color: #111827;
+            font-size: 1.1rem;
+        }
+
+        .pd-card ul {
+            margin: 0;
+            padding-left: 1.2rem;
+            line-height: 1.7;
+        }
+
+        .table-wrapper {
+            overflow-x: auto;
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            margin-top: 1rem;
+        }
+
+        .pd-table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 840px;
+        }
+
+        .pd-table th,
+        .pd-table td {
+            border-bottom: 1px solid #e5e7eb;
+            padding: 0.85rem;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        .pd-table th {
+            background: #f9fafb;
+            color: #111827;
+            font-weight: 700;
+        }
+
+        .pd-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .csd-intro {
+            margin: 0.25rem 0 0.9rem 0;
+            color: #6b7280;
+        }
+
+        .csd-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .csd-card {
+            border-radius: 8px;
+            padding: 1rem 1.1rem;
+            border: 1px solid #e5e7eb;
+            background: #ffffff;
+        }
+
+        .csd-card h4 {
+            margin: 0 0 0.6rem 0;
+            color: #111827;
+        }
+
+        .csd-card p {
+            margin: 0;
+        }
+
+        .csd-card.certezas {
+            background: #ecfdf3;
+            border-color: #86efac;
+        }
+
+        .csd-card.suposicoes {
+            background: #fffbeb;
+            border-color: #fcd34d;
+        }
+
+        .csd-card.duvidas {
+            background: #eff6ff;
+            border-color: #93c5fd;
+        }
+
+        .csd-table th:nth-child(1),
+        .csd-table td:nth-child(1) {
+            background: #ecfdf3;
+        }
+
+        .csd-table th:nth-child(2),
+        .csd-table td:nth-child(2) {
+            background: #fffbeb;
+        }
+
+        .csd-table th:nth-child(3),
+        .csd-table td:nth-child(3) {
+            background: #eff6ff;
+        }
+
+        .persona-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1rem;
+        }
+
+        .persona-card {
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 1.25rem;
+        }
+
+        .persona-photo {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 0.8rem;
+            border: 1px solid #e5e7eb;
+        }
+
+        .persona-tag {
+            display: inline-block;
+            background: #fee2e2;
+            color: #991b1b;
+            border-radius: 999px;
+            padding: 0.2rem 0.6rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 0.7rem;
+        }
+
+        .persona-card h3 {
+            margin: 0 0 0.5rem 0;
+            color: #111827;
+        }
+
+        .persona-card p {
+            margin: 0 0 0.7rem 0;
+        }
+
+        .persona-card ul {
+            margin: 0;
+            padding-left: 1.2rem;
+            line-height: 1.7;
+        }
+
+        .process-checklist {
+            background: #ecfeff;
+            border-left: 4px solid #0891b2;
+            border-radius: 8px;
+            padding: 1rem 1.1rem;
+            margin-top: 1rem;
+        }
+
+        .process-checklist ul {
+            margin: 0.5rem 0 0 0;
+            padding-left: 1.2rem;
+            line-height: 1.75;
         }
 
         /* Actors Section */
@@ -186,175 +515,507 @@
 </head>
 <body>
 
+    <a href="#briefing" class="skip-link">Pular para o conteudo principal</a>
+
     <header>
         <h1>FATEC Carreiras</h1>
-        <p>A ponte inteligente entre o talento acadêmico e as necessidades reais do mercado.</p>
+        <p>A ponte inteligente entre o talento academico e as necessidades reais do mercado, com foco em experiencia do usuario e acessibilidade.</p>
     </header>
 
-    <div class="container">
+    <main id="main-content" class="container">
         
         <!-- Section 1: Briefing -->
         <section id="briefing">
-            <h2>1. Briefing: O Abismo entre o Currículo e a Vaga</h2>
+            <h2>1. Briefing - contextualizacao do PROBLEMA</h2>
+
+            <div class="briefing-note" aria-label="Atualizacao da versao do briefing">
+                <p>Durante muito tempo, o processo de entrada no mercado para estudantes foi guiado mais por tentativa e erro do que por clareza. O aluno passa horas preparando curriculo, ajustando texto, enviando candidatura e aguardando retorno, mas quase sempre sem saber se realmente havia aderencia entre seu perfil e a vaga.</p>
+                <p>Do outro lado, o recrutador abre uma vaga para nivel inicial e recebe um volume alto de candidaturas com pouca compatibilidade. A triagem vira um trabalho manual exaustivo, consome tempo da equipe e atrasa decisoes que impactam operacao, produtividade e custo.</p>
+                <p>No centro desse problema, a plataforma precisa atuar como ponte de entendimento: reduzir ruído, organizar expectativa, tornar o status transparente e transformar rejeicao em direcionamento de evolucao. Este briefing parte dessa dor real para estruturar a descoberta com base em fatos, comportamento observado e impacto de negocio, antes de qualquer proposta de interface.</p>
+            </div>
             
             <div class="briefing-grid">
                 <div class="card">
-                    <h3>O Problema Atual</h3>
-                    <p>Atualmente, o ecossistema de recrutamento para posições de estágio e nível júnior enfrenta uma crise de comunicação.</p>
-                    <p>De um lado, empresas utilizam descrições de vagas genéricas — muitas vezes copiadas de organizações maiores —, gerando a <strong>"síndrome do unicórnio"</strong>: anúncios que exigem anos de experiência e conhecimentos avançados para posições iniciais.</p>
-                    <p>Do outro lado, estudantes da FATEC disparam currículos no escuro. Sem compreender exatamente o que o mercado busca e lidando com a frustração do <strong>"vácuo"</strong> (a ausência total de feedback pós-candidatura), esses alunos perdem a oportunidade de direcionar seus estudos e aprimorar suas habilidades. O resultado é um processo seletivo ineficiente: o RH perde dias triando currículos incompatíveis, e os talentos promissores permanecem invisíveis.</p>
+                    <h3>1. O Contexto (A Situacao Atual)</h3>
+                    <p>O cenario atual de recrutamento para estagio e nivel junior apresenta baixa previsibilidade para estudantes e alto custo de triagem para empresas. A leitura desta etapa parte de fatos observaveis, sem antecipar solucao.</p>
+                    <ul style="line-height: 1.8;">
+                        <li><strong>Perspectiva externa (mercado):</strong> vagas com requisitos inflados e pouco aderentes ao nivel de entrada geram ruido de selecao.</li>
+                        <li><strong>Perspectiva interna (produto atual):</strong> fluxo de candidatura sem feedback acionavel e com baixa transparencia de status.</li>
+                        <li><strong>Comportamento observado:</strong> estudantes candidatam-se por tentativa e erro; recrutadores enfrentam sobrecarga de triagem manual.</li>
+                        <li><strong>Dores latentes mapeadas:</strong> abandono de etapas, baixa confianca no processo e perda de eficiencia operacional.</li>
+                    </ul>
+                    <p><strong>Problema central :</strong> o sistema atual ainda nao oferece previsibilidade suficiente para quem se candidata nem eficiencia suficiente para quem seleciona, ampliando retrabalho dos dois lados.</p>
                 </div>
                 
                 <div class="card" style="background-color: #fef2f2;">
-                    <h3 style="color: var(--primary-color);">A Solução FATEC</h3>
-                    <p>A nossa proposta é atuar como uma verdadeira ponte — não apenas um mural de empregos. A plataforma FATEC de Carreiras será uma intermediadora inteligente, capaz de:</p>
+                    <h3 style="color: var(--primary-color);">2. A Intencao Superior (O Objetivo de Negocio)</h3>
+                    <p>A visao macro deste estudo e gerar valor para usuario e negocio ao mesmo tempo, priorizando outcomes mensuraveis em vez de lista de funcionalidades:</p>
                     <ul style="line-height: 1.8;">
-                        <li><strong>Matchmaker Dinâmico:</strong> Realizar o cruzamento entre currículos dos alunos e as vagas das empresas parceiras.</li>
-                        <li><strong>Índice de Compatibilidade:</strong> Calcular e apresentar um índice claro de aderência à vaga.</li>
-                        <li><strong>Feedbacks Automatizados:</strong> Fornecer retornos automáticos para auxiliar os estudantes no seu desenvolvimento de carreira.</li>
+                        <li><strong>Resultado 1:</strong> aumentar a taxa de conclusao em cadastro e candidatura.</li>
+                        <li><strong>Resultado 2:</strong> reduzir tempo e custo de triagem inicial para recrutadores.</li>
+                        <li><strong>Resultado 3:</strong> elevar qualidade de aderencia entre perfil e vaga.</li>
+                        <li><strong>Resultado 4:</strong> evoluir experiencia inclusiva com criterios de acessibilidade nos fluxos criticos.</li>
+                    </ul>
+                    <p><strong>Proposta de valor :</strong> conectar candidatura, triagem e desenvolvimento de competencias em um fluxo unico, com criterios transparentes e status previsivel.</p>
+                    <ul style="line-height: 1.8; margin-top: 0.4rem;">
+                        <li><strong>Matchmaker dinamico:</strong> reduz ruido operacional ao cruzar requisitos da vaga com evidencias do perfil.</li>
+                        <li><strong>Compatibilidade explicavel:</strong> apresenta aderencia com justificativas claras para candidato e recrutador.</li>
+                        <li><strong>Feedback orientado a evolucao:</strong> transforma nao aprovacao em plano pratico de melhoria.</li>
+                        <li><strong>Acessibilidade como requisito:</strong> garante autonomia e inclusao nas etapas criticas.</li>
                     </ul>
                 </div>
             </div>
+
+            <div class="briefing-grid" style="margin-top: 2rem;">
+                <div class="card">
+                    <h3>3. A Intencao da Equipe (O Proposito do Estudo de UX)</h3>
+                    <ul style="line-height: 1.8;">
+                        <li>Compreender necessidades, desejos, valores e barreiras dos usuarios no contexto real de uso.</li>
+                        <li>Investigar o problema com profundidade para reduzir incerteza antes da ideacao de solucao.</li>
+                        <li>Produzir base analitica para propostas futuras que sejam desejaveis, viaveis e factiveis.</li>
+                        <li>Demonstrar maturidade metodologica no portfolio por meio de evidencias de descoberta.</li>
+                    </ul>
+                    <p><strong>Requisitos de UX e acessibilidade (MVP ) para orientar o estudo:</strong></p>
+                    <ul style="line-height: 1.8;">
+                        <li><strong>Navegacao por teclado:</strong> fluxo critico com tabulacao logica e foco visivel.</li>
+                        <li><strong>Feedback imediato em formularios:</strong> erros e sucesso no momento certo, com orientacao clara.</li>
+                        <li><strong>Rotulos e semantica consistentes:</strong> instrucoes compreensiveis para usuario e tecnologia assistiva.</li>
+                        <li><strong>Contraste e redundancia visual:</strong> informacao importante nao pode depender apenas de cor.</li>
+                        <li><strong>Revisao heuristica por severidade:</strong> priorizar correcoes de maior impacto no fluxo.</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>4. Tarefas Implicitas (Proximos Passos da Descoberta)</h3>
+                    <ul style="line-height: 1.8;">
+                        <li><strong>5W1H:</strong> detalhar o problema por fatos, atores, contexto, momento, causa e impacto.</li>
+                        <li><strong>Personas:</strong> mapear quem vive o problema e quais dores/objetivos orientam decisao.</li>
+                        <li><strong>Matriz CSD:</strong> validar incertezas e transformar hipoteses em evidencias.</li>
+                        <li><strong>Mapa de Jornada:</strong> aprofundar friccoes atuais e identificar pontos de maior dor.</li>
+                        <li><strong>Sintese executiva:</strong> estabelecer criterios de sucesso antes da fase de solucao.</li>
+                    </ul>
+                    <p><strong>Resultados esperados e KPIs para monitorar evolucao:</strong></p>
+                    <ul style="line-height: 1.8;">
+                        <li><strong>Maior taxa de conclusao:</strong> aumento de usuarios que finalizam cadastro e candidatura.</li>
+                        <li><strong>Menos erros em formulario:</strong> reducao de erros por campo e por etapa.</li>
+                        <li><strong>Menor abandono no funil:</strong> queda da evasao entre fases criticas.</li>
+                        <li><strong>Evolucao de conformidade WCAG:</strong> crescimento progressivo dos criterios atendidos.</li>
+                        <li><strong>Reducao de triagem manual de baixa aderencia:</strong> menor tempo de analise inicial no RH.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card" style="margin-top: 2rem; border-left: 4px solid #0ea5e9;">
+                <h3>5. Limites (Restricoes do Projeto)</h3>
+                <p>Este estudo reconhece restricoes para garantir direcionamento realista e evitar propostas inviaveis no curto prazo.</p>
+                <ul style="line-height: 1.8;">
+                    <li><strong>Tecnologia:</strong> sem implementacao de motor completo de matching nesta etapa.</li>
+                    <li><strong>Negocio:</strong> foco em fluxos criticos (cadastro, candidatura, triagem e feedback), sem expandir para modulos secundarios.</li>
+                    <li><strong>Tempo:</strong> ciclo de descoberta limitado, com priorizacao de hipoteses de maior risco.</li>
+                    <li><strong>Escopo metodologico:</strong> esta fase cobre o Espaco do Problema; desenho de interface detalhada fica para fase posterior.</li>
+                    <li><strong>Fora de escopo:</strong> desenvolvimento completo de funcionalidades finais e medicao de longo prazo em producao.</li>
+                </ul>
+            </div>
+
+            <section id="atores" class="briefing-subsection">
+                <h3> Atores Envolvidos e Fluxo de Valor</h3>
+                <p>Os atores abaixo representam quem vivencia o problema em pontos diferentes da jornada. Essa leitura ajuda a equipe a evitar solucoes genericas e a priorizar impacto real por perfil de usuario.</p>
+
+                <div class="actors-grid">
+                    <div class="actor-card">
+                        <div class="actor-icon">🎓</div>
+                        <h3>O Talento (Estudante da FATEC)</h3>
+                        <p class="light-text">O aluno em busca da inserção ou realocação no mercado de trabalho.</p>
+                        <p><strong>O que faz:</strong> Cria um perfil acadêmico e técnico, cadastra seu currículo, visualiza as vagas e se candidata de forma otimizada.</p>
+                        <p><strong>A dor que resolve:</strong> Fim do envio de currículos "às cegas". Agora, o aluno pode consultar sua aderência percentual (Match Score) para a vaga antes de investir tempo em uma candidatura, além de receber feedbacks valiosos.</p>
+                    </div>
+
+                    <div class="actor-card">
+                        <div class="actor-icon">🏢</div>
+                        <h3>O Recrutador (Empresas Parceiras)</h3>
+                        <p class="light-text">Organizações que desejam investir em novos talentos.</p>
+                        <p><strong>O que faz:</strong> Cria e divulga vagas, padronizando os requisitos técnicos e as habilidades comportamentais necessárias.</p>
+                        <p><strong>A dor que resolve:</strong> Fim da enxurrada de currículos incompatíveis (ruído de seleção). O RH acessará um painel onde os alunos já aparecem ranqueados de acordo com sua compatibilidade para a vaga específica.</p>
+                    </div>
+
+                    <div class="actor-card">
+                        <div class="actor-icon">⚙️</div>
+                        <h3>O Motor de Inteligência</h3>
+                        <p class="light-text">A Plataforma FATEC integrada.</p>
+                        <p><strong>O que faz:</strong> Analisa o perfil do aluno e cruza as informações com os requisitos criados pela empresa (Match Score).</p>
+                        <p><strong>A dor que resolve:</strong> Gera os feedbacks automáticos de melhoria contínua para os alunos não selecionados (ex: "Sugerimos aprofundar conhecimentos em React").</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="user-stories" class="briefing-subsection">
+                <h3> User Stories (Cenarios Reais e Dinamicos)</h3>
+                <p>As historias abaixo traduzem o problema em contexto real de uso. Elas reforcam dores, expectativas e impacto operacional para orientar a descoberta com foco em comportamento.</p>
+
+                <div class="story-card">
+                    <h3 class="story-title">📖 User Story 1: O Estudante e a Triagem Inteligente</h3>
+                    <div class="scenario">
+                        <strong>O Cenário:</strong> Lucas está no 4º semestre de Análise e Desenvolvimento de Sistemas. Ele passa horas por semana enviando seu PDF padrão para todas as vagas que encontra, independentemente da stack exigida. Ele se sente profundamente frustrado porque a taxa de resposta é nula e ele não faz ideia se o problema é o layout do currículo, a formatação ou as competências que lhe faltam. Diante do vasto mercado de tecnologia, Lucas precisa de um "norte" para saber em quais posições a base que construiu na universidade pode ser melhor aplicada, otimizando seu tempo e energia na reta final do curso.
+                    </div>
+                    <div class="user-story-format">
+                        <p><span>Como</span> um estudante em busca da primeira oportunidade na área,</p>
+                        <p><span>Quero</span> visualizar um percentual claro de compatibilidade entre o meu perfil e as vagas anunciadas,</p>
+                        <p><span>Para que</span> eu possa investir minha energia nas candidaturas onde minhas chances reais de aprovação são altas, em vez de desperdiçar tempo em vagas fora do meu escopo atual.</p>
+                    </div>
+                </div>
+
+                <div class="story-card">
+                    <h3 class="story-title">📖 User Story 2: O Estudante e o Feedback Contínuo</h3>
+                    <div class="scenario">
+                        <strong>O Cenário:</strong> Mariana aplicou para uma vaga de estágio em Dados. Apesar de ir muito bem em Banco de Dados na faculdade e dominar SQL, ela não foi chamada. O projeto da vaga exigia familiaridade com a biblioteca Pandas (Python) para tratamento de dados, mas isso estava ofuscado em uma lista genérica de requisitos extras. A empresa enviou apenas um genérico "obrigado por participar" automático. Se a plataforma tivesse fornecido um insight focado, relatando exatamente qual competência a desclassificou, Mariana não só saberia o motivo exato de sua reprovação, como poderia utilizar materiais e grupos de estudo da própria FATEC para cobrir essa lacuna até o próximo ciclo de seleção.
+                    </div>
+                    <div class="user-story-format">
+                        <p><span>Como</span> um candidato que não avançou no processo seletivo,</p>
+                        <p><span>Quero</span> receber um relatório automatizado destacando as habilidades técnicas que me faltaram em relação aos aprovados,</p>
+                        <p><span>Para que</span> eu consiga entender exatamente os motivos da minha não seleção e saiba onde preciso direcionar meus estudos ou melhorar a apresentação do meu currículo.</p>
+                    </div>
+                </div>
+
+                <div class="story-card">
+                    <h3 class="story-title">📖 User Story 3: O RH e o Foco nos Talentos Certos</h3>
+                    <div class="scenario">
+                        <strong>O Cenário:</strong> Roberto é Recrutador Tech de uma startup em rápida expansão. Ao abrir uma vaga de "Desenvolvedor Júnior", sua caixa de entrada lota com 400 aplicações. Desse montante, mais de 300 são profissionais de áreas não correlatas (tentando transição de carreira sem base técnica) ou sêniores tentando qualquer alocação. A triagem manual vira um pesadelo: o processo estagna por semanas apenas lendo PDFs sem padrão. Isso atrasa o roadmap de entregas do time de engenharia, sobrecarrega a equipe atual e dispara os custos de contração da startup em meses de procura infundada.
+                    </div>
+                    <div class="user-story-format">
+                        <p><span>Como</span> um profissional de recrutamento da empresa parceira,</p>
+                        <p><span>Quero</span> receber a lista de candidatos já ranqueada por ordem decrescente de "Match Score" técnico,</p>
+                        <p><span>Para que</span> eu elimine o tempo gasto em triagens braçais de perfis fora do escopo e possa iniciar minhas entrevistas diretamente com os alunos que mais se adequam à nossa necessidade.</p>
+                    </div>
+                </div>
+
+                <div class="story-card">
+                    <h3 class="story-title">📖 User Story 4: A Empresa e o Anúncio Sem Ruído</h3>
+                    <div class="scenario">
+                        <strong>O Cenário:</strong> A coordenação técnica de uma indústria regional solicitou um estagiário de Logística e Supply Chain. O analista de RH, sobrecarregado e não tendo conhecimento técnico da área, procurou modelos online e acabou copiando trechos de um anúncio de Analista Sênior, apenas mudando a senioridade no título. O resultado foi uma vaga Frankenstein: pedia pacote Office avançado, inglês fluente e domínio em sistemas ERP complexos para alguém no segundo semestre de curso. Alunos da FATEC com total capacidade de exercer o papel inicial se intimidaram pela lista irreal e sequer se candidataram. A empresa ficou sem candidato, precisando reabrir o processo do zero num ciclo ocioso de comunicação.
+                    </div>
+                    <div class="user-story-format">
+                        <p><span>Como</span> o responsável por abrir a vaga na plataforma,</p>
+                        <p><span>Quero</span> ser guiado por um formulário inteligente que me ajude a elencar apenas as Hard Skills e o nível de senioridade reais para o cargo,</p>
+                        <p><span>Para que</span> eu consiga criar descrições de vagas realistas e justas, evitando assustar os bons estudantes da FATEC com exigências desnecessárias.</p>
+                    </div>
+                </div>
+            </section>
+
         </section>
 
-        <!-- Section 2: Atores Envolvidos -->
-        <section id="atores">
-            <h2>Atores Envolvidos e Fluxo de Valor</h2>
-            <p style="margin-bottom: 2rem;">Para o funcionamento do sistema, identificamos três atores centrais, cada um com necessidades específicas e objetivos claros:</p>
-            
-            <div class="actors-grid">
-                <div class="actor-card">
-                    <div class="actor-icon">🎓</div>
-                    <h3>O Talento (Estudante da FATEC)</h3>
-                    <p class="light-text">O aluno em busca da inserção ou realocação no mercado de trabalho.</p>
-                    <p><strong>O que faz:</strong> Cria um perfil acadêmico e técnico, cadastra seu currículo, visualiza as vagas e se candidata de forma otimizada.</p>
-                    <p><strong>A dor que resolve:</strong> Fim do envio de currículos "às cegas". Agora, o aluno pode consultar sua aderência percentual (Match Score) para a vaga antes de investir tempo em uma candidatura, além de receber feedbacks valiosos.</p>
-                </div>
+        <!-- Section 2: Plano de acao 5W1H -->
+        <section id="processos-pd">
+            <h2>2. Plano de acao 5W1H - do PROBLEMA</h2>
 
-                <div class="actor-card">
-                    <div class="actor-icon">🏢</div>
-                    <h3>O Recrutador (Empresas Parceiras)</h3>
-                    <p class="light-text">Organizações que desejam investir em novos talentos.</p>
-                    <p><strong>O que faz:</strong> Cria e divulga vagas, padronizando os requisitos técnicos e as habilidades comportamentais necessárias.</p>
-                    <p><strong>A dor que resolve:</strong> Fim da enxurrada de currículos incompatíveis (ruído de seleção). O RH acessará um painel onde os alunos já aparecem ranqueados de acordo com sua compatibilidade para a vaga específica.</p>
-                </div>
+            <div class="pd-grid">
+                <article class="pd-card">
+                    <h3>O que analisar</h3>
+                    <ul>
+                        <li><strong>What:</strong> estudantes e empresas enfrentam baixa previsibilidade na candidatura e na triagem.</li>
+                        <li><strong>Who:</strong> estudantes, recrutadores e equipe de gestao academica.</li>
+                        <li><strong>Where:</strong> cadastro, leitura de vagas, decisao de candidatura e retorno de status.</li>
+                        <li><strong>When:</strong> principalmente nas etapas iniciais do funil e no pos-candidatura.</li>
+                        <li><strong>Why:</strong> sem clareza e feedback, ha abandono, retrabalho e baixa qualidade de match.</li>
+                        <li><strong>How:</strong> impacto direto em conclusao de fluxo, custo de triagem e confianca no processo.</li>
+                    </ul>
+                </article>
 
-                <div class="actor-card">
-                    <div class="actor-icon">⚙️</div>
-                    <h3>O Motor de Inteligência</h3>
-                    <p class="light-text">A Plataforma FATEC integrada.</p>
-                    <p><strong>O que faz:</strong> Analisa o perfil do aluno e cruza as informações com os requisitos criados pela empresa (Match Score).</p>
-                    <p><strong>A dor que resolve:</strong> Gera os feedbacks automáticos de melhoria contínua para os alunos não selecionados (ex: "Sugerimos aprofundar conhecimentos em React").</p>
-                </div>
+                <article class="pd-card">
+                    <h3>Como coletar sem vieses</h3>
+                    <ul>
+                        <li>Evitar perguntas diretas indutivas como "por que voce faz isso?".</li>
+                        <li>Priorizar narrativas de episodio real: "conte a ultima vez".</li>
+                        <li>Detalhar sequencia temporal: "o que aconteceu antes e depois?".</li>
+                        <li>Transformar historias em evidencias para preencher 5W1H e CSD.</li>
+                    </ul>
+                </article>
+
+                <article class="pd-card">
+                    <h3>Plano de acao operacional (5W1H em sprint)</h3>
+                    <ul>
+                        <li><strong>Semana 1:</strong> consolidar fatos existentes (dados de funil, abandono e tickets).</li>
+                        <li><strong>Semana 2:</strong> conduzir entrevistas comportamentais com foco em episodio real.</li>
+                        <li><strong>Semana 3:</strong> sintetizar achados em 5W1H e comparar com percepcao interna.</li>
+                        <li><strong>Semana 4:</strong> definir hipoteses criticas para Matriz CSD e validacao inicial.</li>
+                    </ul>
+                </article>
+
+                <article class="pd-card">
+                    <h3>Sinais que indicam problema bem definido</h3>
+                    <ul>
+                        <li>A equipe descreve o problema da mesma forma, sem contradicoes.</li>
+                        <li>As dores possuem evidencia observavel e impacto no negocio.</li>
+                        <li>As causas provaveis sao diferenciadas de sintomas de interface.</li>
+                        <li>O escopo do estudo esta claro antes da ideacao de features.</li>
+                    </ul>
+                </article>
+            </div>
+
+            <h3 style="margin-top: 1.8rem; color: #111827;">3. Personas - atores que vivenciam o PROBLEMA</h3>
+
+            <div class="persona-grid" aria-label="Personas do espaco do problema">
+                <article class="persona-card">
+                    <span class="persona-tag">Persona Primaria</span>
+                    <img src="./assets/lucas.jpg" alt="Lucas, candidato da FATEC" class="persona-photo">
+                    <h3>Lucas, o Candidato sem Norte</h3>
+                    <p><strong>Contexto:</strong> estudante de tecnologia, busca primeira oportunidade e possui boa base tecnica parcial.</p>
+                    <p><strong>Base de evidencia:</strong> padrao observado em relatos de candidatura por tentativa e erro, com baixa clareza de aderencia.</p>
+                    <p><strong>Frase-chave:</strong> "Eu me candidato sem saber se estou perto ou longe do que a vaga pede".</p>
+                    <ul>
+                        <li><strong>Objetivo:</strong> priorizar vagas com aderencia real.</li>
+                        <li><strong>Dor central:</strong> candidatura sem previsibilidade e sem feedback acionavel.</li>
+                        <li><strong>Necessidade:</strong> score explicavel, orientacao clara de lacunas e status visivel.</li>
+                        <li><strong>Barreiras de uso:</strong> linguagem tecnica excessiva e fluxo longo de candidatura.</li>
+                        <li><strong>Indicador de sucesso:</strong> concluir candidatura com confianca em menos etapas.</li>
+                    </ul>
+                </article>
+
+                <article class="persona-card">
+                    <span class="persona-tag">Persona Secundaria</span>
+                    <img src="./assets/roberto.jpg" alt="Roberto, recrutador de empresa parceira" class="persona-photo">
+                    <h3>Roberto, o Recrutador Sob Pressao</h3>
+                    <p><strong>Contexto:</strong> precisa preencher vaga junior com agilidade e baixo custo de triagem.</p>
+                    <p><strong>Base de evidencia:</strong> recorrencia de sobrecarga em triagem e dificuldade de filtrar perfis aderentes com rapidez.</p>
+                    <p><strong>Frase-chave:</strong> "Preciso identificar bons candidatos rapidamente, sem ler centenas de perfis desalinhados".</p>
+                    <ul>
+                        <li><strong>Objetivo:</strong> reduzir ruido de candidaturas fora de escopo.</li>
+                        <li><strong>Dor central:</strong> volume alto de perfis pouco aderentes.</li>
+                        <li><strong>Necessidade:</strong> ranking por compatibilidade e filtro semantico de requisitos.</li>
+                        <li><strong>Barreiras de uso:</strong> vagas mal descritas e filtros insuficientes na triagem.</li>
+                        <li><strong>Indicador de sucesso:</strong> reduzir tempo de triagem sem perder candidatos promissores.</li>
+                    </ul>
+                </article>
+
+                <article class="persona-card">
+                    <span class="persona-tag">Persona de Apoio</span>
+                    <img src="./assets/Fatec-Franca-Dr.-Thomaz-Novelino-WhatsApp-Image-2022-01-19-at-15.36.26.jpeg" alt="FATEC Franca, coordenacao academica" class="persona-photo">
+                    <h3>Coordenacao Academica, a Mediadora de Empregabilidade</h3>
+                    <p><strong>Contexto:</strong> acompanha evolucao de aderencia entre formacao academica e demanda do mercado.</p>
+                    <p><strong>Base de evidencia:</strong> necessidade institucional de rastrear lacunas de competencias para orientar estudantes e trilhas.</p>
+                    <p><strong>Frase-chave:</strong> "Preciso de indicadores para orientar melhor estudantes e ajustar trilhas de formacao".</p>
+                    <ul>
+                        <li><strong>Objetivo:</strong> monitorar lacunas de competencias recorrentes.</li>
+                        <li><strong>Dor central:</strong> baixa visibilidade sobre causas de nao aprovacao.</li>
+                        <li><strong>Necessidade:</strong> relatorios por trilha, perfil e etapa do funil.</li>
+                    </ul>
+                </article>
+            </div>
+
+            <h3 style="margin-top: 1.8rem; color: #111827;">4. Certezas, Suposicoes, Duvidas (Matriz CSD)</h3>
+            <p class="csd-intro">Hipoteses -&gt; Validacao. Esta matriz diferencia o que ja e fato, o que precisa de experimento e o que ainda exige pesquisa exploratoria.</p>
+
+            <div class="csd-grid" aria-label="Guia de leitura da Matriz CSD">
+                <article class="csd-card certezas">
+                    <h4>Certezas (fatos)</h4>
+                    <p>Itens sustentados por evidencias: dados, historico de uso, logs, relatos recorrentes e normas.</p>
+                </article>
+                <article class="csd-card suposicoes">
+                    <h4>Suposicoes (hipoteses)</h4>
+                    <p>Crencas plausiveis que exigem validacao com teste controlado antes de virar requisito.</p>
+                </article>
+                <article class="csd-card duvidas">
+                    <h4>Duvidas (incognitas)</h4>
+                    <p>Perguntas abertas que impedem decisao segura e orientam o plano de pesquisa.</p>
+                </article>
+            </div>
+
+            <div class="table-wrapper" aria-label="Matriz CSD do projeto">
+                <table class="pd-table csd-table">
+                    <thead>
+                        <tr>
+                            <th>Certezas (com evidencia)</th>
+                            <th>Suposicoes (a validar)</th>
+                            <th>Duvidas (pesquisa adicional)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Abandono ocorre em cadastro e candidatura quando ha friccao.</td>
+                            <td>Feedback de aderencia antes da candidatura aumenta conclusao.</td>
+                            <td>Qual faixa de score eleva confianca sem gerar efeito de desmotivacao?</td>
+                        </tr>
+                        <tr>
+                            <td>RH gasta tempo excessivo em triagem manual de baixa aderencia.</td>
+                            <td>Formulario guiado por senioridade reduz requisitos irreais.</td>
+                            <td>Quais campos de vaga mais influenciam a qualidade do ranking?</td>
+                        </tr>
+                        <tr>
+                            <td>Barreiras de acessibilidade afetam autonomia e conclusao.</td>
+                            <td>Mensagens de status com linguagem simples reduzem suporte.</td>
+                            <td>Quais criterios WCAG trazem maior ganho no primeiro ciclo?</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="process-checklist" aria-label="Plano de validacao da matriz csd">
+                <p><strong>Plano de validacao orientado pela CSD:</strong></p>
+                <ul>
+                    <li>Priorizar suposicoes por risco: impacto no negocio x incerteza.</li>
+                    <li>Definir experimento por hipotese com criterio objetivo de sucesso.</li>
+                    <li>Atualizar a matriz ao fim de cada ciclo: hipotese validada vira certeza.</li>
+                    <li>Promover ao backlog somente requisitos sustentados por evidencia.</li>
+                </ul>
+            </div>
+
+            <h3 style="margin-top: 1.8rem; color: #111827;">5. Mapa de Jornada de Usuarios - pain points</h3>
+            <div class="table-wrapper" aria-label="Mapa de jornada com pontos de friccao">
+                <table class="pd-table">
+                    <thead>
+                        <tr>
+                            <th>Etapa</th>
+                            <th>Acao do usuario</th>
+                            <th>Pensamento/Sentimento</th>
+                            <th>Friccao principal</th>
+                            <th>Impacto no negocio</th>
+                            <th>Oportunidade</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Descobrir vaga</td>
+                            <td>Ler descricao e requisitos</td>
+                            <td>"Nao sei se meu perfil encaixa"</td>
+                            <td>Lingua tecnica e requisitos inflados</td>
+                            <td>Queda de candidatura qualificada</td>
+                            <td>Descricao guiada por senioridade e contexto</td>
+                        </tr>
+                        <tr>
+                            <td>Decidir candidatura</td>
+                            <td>Comparar perfil com vaga</td>
+                            <td>Inseguranca e tentativa-cega</td>
+                            <td>Ausencia de explicacao de aderencia</td>
+                            <td>Aumento de ruido para triagem</td>
+                            <td>Indice de compatibilidade explicavel</td>
+                        </tr>
+                        <tr>
+                            <td>Acompanhar retorno</td>
+                            <td>Esperar resposta da empresa</td>
+                            <td>Frustracao por silencio</td>
+                            <td>Status opaco e feedback generico</td>
+                            <td>Perda de confianca na plataforma</td>
+                            <td>Linha do tempo de status + feedback orientado</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="pd-grid" style="margin-top: 1rem;">
+                <article class="pd-card">
+                    <h3>Entregavel de portfolio: O Desafio e o Contexto</h3>
+                    <ul>
+                        <li>Declaracao do problema com base em evidencia.</li>
+                        <li>Abordagem do Duplo Diamante (Descobrir e Definir).</li>
+                        <li>Definicao de sucesso para usuario e negocio.</li>
+                        <li>Artefatos: Briefing, 5W1H, Personas, CSD e Jornada.</li>
+                        <li>Decisoes tomadas a partir de validacao, nao de intuicao.</li>
+                    </ul>
+                </article>
+
+                <article class="pd-card">
+                    <h3>Riscos criticos de Discovery e mitigacao</h3>
+                    <ul>
+                        <li><strong>Risco:</strong> pular pesquisa e focar em output.
+                            <br><strong>Mitigacao:</strong> entrevistas semanais e revisao de evidencia.</li>
+                        <li><strong>Risco:</strong> excesso de personas e perda de foco.
+                            <br><strong>Mitigacao:</strong> uma persona primaria e ate duas secundarias.</li>
+                        <li><strong>Risco:</strong> CSD sem atualizacao apos testes.
+                            <br><strong>Mitigacao:</strong> converter suposicoes validadas em certezas por ciclo.</li>
+                    </ul>
+                </article>
+            </div>
+
+            <div class="process-checklist" aria-label="Checklist de prontidao do espaco do problema">
+                <p><strong>Checklist de prontidao do Espaco do Problema:</strong></p>
+                <ul>
+                    <li>Problema definido sem antecipar solucao.</li>
+                    <li>Hipoteses criticas priorizadas por risco.</li>
+                    <li>Persona primaria clara e acionavel.</li>
+                    <li>Friccoes da jornada atual mapeadas com impacto.</li>
+                    <li>Criterios de sucesso definidos antes da ideacao.</li>
+                </ul>
             </div>
         </section>
 
-        <!-- Section 3: User Stories -->
-        <section id="user-stories">
-            <h2>User Stories (Cenários Reais e Dinâmicos)</h2>
-            <p style="margin-bottom: 2rem;">Para demonstrar o valor prático desse sistema, as User Stories abaixo foram elaboradas trazendo um cenário real mais aprofundado, que não só expõe a "dor" de cada ator, mas também os impactos estruturais causados por esses gargalos de comunicação no mercado atual.</p>
-            
-            <div class="story-card">
-                <h3 class="story-title">📖 User Story 1: O Estudante e a Triagem Inteligente</h3>
-                <div class="scenario">
-                    <strong>O Cenário:</strong> Lucas está no 4º semestre de Análise e Desenvolvimento de Sistemas. Ele passa horas por semana enviando seu PDF padrão para todas as vagas que encontra, independentemente da stack exigida. Ele se sente profundamente frustrado porque a taxa de resposta é nula e ele não faz ideia se o problema é o layout do currículo, a formatação ou as competências que lhe faltam. Diante do vasto mercado de tecnologia, Lucas precisa de um "norte" para saber em quais posições a base que construiu na universidade pode ser melhor aplicada, otimizando seu tempo e energia na reta final do curso.
-                </div>
-                <div class="user-story-format">
-                    <p><span>Como</span> um estudante em busca da primeira oportunidade na área,</p>
-                    <p><span>Quero</span> visualizar um percentual claro de compatibilidade entre o meu perfil e as vagas anunciadas,</p>
-                    <p><span>Para que</span> eu possa investir minha energia nas candidaturas onde minhas chances reais de aprovação são altas, em vez de desperdiçar tempo em vagas fora do meu escopo atual.</p>
-                </div>
-            </div>
-
-            <div class="story-card">
-                <h3 class="story-title">📖 User Story 2: O Estudante e o Feedback Contínuo</h3>
-                <div class="scenario">
-                    <strong>O Cenário:</strong> Mariana aplicou para uma vaga de estágio em Dados. Apesar de ir muito bem em Banco de Dados na faculdade e dominar SQL, ela não foi chamada. O projeto da vaga exigia familiaridade com a biblioteca Pandas (Python) para tratamento de dados, mas isso estava ofuscado em uma lista genérica de requisitos extras. A empresa enviou apenas um genérico "obrigado por participar" automático. Se a plataforma tivesse fornecido um insight focado, relatando exatamente qual competência a desclassificou, Mariana não só saberia o motivo exato de sua reprovação, como poderia utilizar materiais e grupos de estudo da própria FATEC para cobrir essa lacuna até o próximo ciclo de seleção.
-                </div>
-                <div class="user-story-format">
-                    <p><span>Como</span> um candidato que não avançou no processo seletivo,</p>
-                    <p><span>Quero</span> receber um relatório automatizado destacando as habilidades técnicas que me faltaram em relação aos aprovados,</p>
-                    <p><span>Para que</span> eu consiga entender exatamente os motivos da minha não seleção e saiba onde preciso direcionar meus estudos ou melhorar a apresentação do meu currículo.</p>
-                </div>
-            </div>
-
-            <div class="story-card">
-                <h3 class="story-title">📖 User Story 3: O RH e o Foco nos Talentos Certos</h3>
-                <div class="scenario">
-                    <strong>O Cenário:</strong> Roberto é Recrutador Tech de uma startup em rápida expansão. Ao abrir uma vaga de "Desenvolvedor Júnior", sua caixa de entrada lota com 400 aplicações. Desse montante, mais de 300 são profissionais de áreas não correlatas (tentando transição de carreira sem base técnica) ou sêniores tentando qualquer alocação. A triagem manual vira um pesadelo: o processo estagna por semanas apenas lendo PDFs sem padrão. Isso atrasa o roadmap de entregas do time de engenharia, sobrecarrega a equipe atual e dispara os custos de contração da startup em meses de procura infundada.
-                </div>
-                <div class="user-story-format">
-                    <p><span>Como</span> um profissional de recrutamento da empresa parceira,</p>
-                    <p><span>Quero</span> receber a lista de candidatos já ranqueada por ordem decrescente de "Match Score" técnico,</p>
-                    <p><span>Para que</span> eu elimine o tempo gasto em triagens braçais de perfis fora do escopo e possa iniciar minhas entrevistas diretamente com os alunos que mais se adequam à nossa necessidade.</p>
-                </div>
-            </div>
-
-            <div class="story-card">
-                <h3 class="story-title">📖 User Story 4: A Empresa e o Anúncio Sem Ruído</h3>
-                <div class="scenario">
-                    <strong>O Cenário:</strong> A coordenação técnica de uma indústria regional solicitou um estagiário de Logística e Supply Chain. O analista de RH, sobrecarregado e não tendo conhecimento técnico da área, procurou modelos online e acabou copiando trechos de um anúncio de Analista Sênior, apenas mudando a senioridade no título. O resultado foi uma vaga Frankenstein: pedia pacote Office avançado, inglês fluente e domínio em sistemas ERP complexos para alguém no segundo semestre de curso. Alunos da FATEC com total capacidade de exercer o papel inicial se intimidaram pela lista irreal e sequer se candidataram. A empresa ficou sem candidato, precisando reabrir o processo do zero num ciclo ocioso de comunicação.
-                </div>
-                <div class="user-story-format">
-                    <p><span>Como</span> o responsável por abrir a vaga na plataforma,</p>
-                    <p><span>Quero</span> ser guiado por um formulário inteligente que me ajude a elencar apenas as Hard Skills e o nível de senioridade reais para o cargo,</p>
-                    <p><span>Para que</span> eu consiga criar descrições de vagas realistas e justas, evitando assustar os bons estudantes da FATEC com exigências desnecessárias.</p>
-                </div>
-            </div>
-
-        </section>
-
-        <!-- Section 4: Desenvolvedores -->
+        <!-- Section 3: Desenvolvedores -->
         <section id="developer" class="developer-section">
             <h2>Developers</h2>
-            <div id="github-profiles">
+            <div id="github-profiles" aria-live="polite">
                 <!-- Os perfis serão injetados aqui via JS -->
             </div>
         </section>
 
-    </div>
+    </main>
 
     <script>
         async function fetchGitHubProfiles() {
             const users = ['GASROT', 'RaulSayajin', 'CoralReefsBR', 'Bjoota'];
+            const fallbackProfiles = {
+                GASROT: {
+                    name: 'GASROT',
+                    bio: 'Perfil de desenvolvedor no GitHub.'
+                },
+                RaulSayajin: {
+                    name: 'RaulSayajin',
+                    bio: 'Perfil de desenvolvedor no GitHub.'
+                },
+                CoralReefsBR: {
+                    name: 'CoralReefsBR',
+                    bio: 'Perfil de desenvolvedor no GitHub.'
+                },
+                Bjoota: {
+                    name: 'Bjoota',
+                    bio: 'Perfil de desenvolvedor no GitHub.'
+                }
+            };
             const profileContainer = document.getElementById('github-profiles');
             
             // Limpa o container antes de adicionar
             profileContainer.innerHTML = '';
 
+            const renderProfileCard = (username, name, avatar, bio) => {
+                const cardHTML = `
+                    <div class="card github-profile-card">
+                        <img src="${avatar}" alt="Avatar do Github: ${name}" class="developer-avatar">
+                        <div class="developer-info">
+                            <h3>${name}</h3>
+                            <p>${bio}</p>
+                            <p><a href="https://github.com/${username}" target="_blank" rel="noopener noreferrer">github.com/${username}</a></p>
+                        </div>
+                    </div>
+                `;
+                profileContainer.innerHTML += cardHTML;
+            };
+
             for (const username of users) {
                 try {
-                    const response = await fetch(`https://api.github.com/users/${username}`);
+                    const response = await fetch(`https://api.github.com/users/${username}`, {
+                        headers: {
+                            'Accept': 'application/vnd.github+json'
+                        }
+                    });
                     
                     if (!response.ok) {
-                        throw new Error(`Falha na comunicação com a API para ${username}`);
+                        throw new Error(`Falha na API para ${username} (status ${response.status})`);
                     }
 
                     const data = await response.json();
                     
                     const name = data.name || data.login || 'Nome não disponível';
-                    const avatar = data.avatar_url;
+                    const avatar = data.avatar_url || `https://github.com/${username}.png`;
                     const bio = data.bio || 'Sem biografia disponível no perfil.';
-                    
-                    // Cria o HTML de cada card
-                    const cardHTML = `
-                        <div class="card github-profile-card">
-                            <img src="${avatar}" alt="Avatar do Github: ${name}" class="developer-avatar">
-                            <div class="developer-info">
-                                <h3>${name}</h3>
-                                <p>${bio}</p>
-                            </div>
-                        </div>
-                    `;
-                    
-                    profileContainer.innerHTML += cardHTML;
+
+                    renderProfileCard(username, name, avatar, bio);
                 } catch (error) {
-                    console.error('Erro ao buscar dados:', error);
-                    profileContainer.innerHTML += `
-                        <div class="card github-profile-card">
-                            <p>Erro ao carregar perfil de ${username}.</p>
-                        </div>
-                    `;
+                    console.warn('Falha ao consultar API do GitHub, usando fallback:', error);
+
+                    const fallback = fallbackProfiles[username];
+                    renderProfileCard(
+                        username,
+                        fallback.name,
+                        `https://github.com/${username}.png`,
+                        fallback.bio
+                    );
                 }
             }
         }
