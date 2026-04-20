@@ -504,6 +504,46 @@
             margin: 0;
             color: var(--text-color);
             font-size: 0.95rem;
+            margin-bottom: 1rem; /* Add some space before the button */
+        }
+
+        .profile-button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            margin-top: auto; /* Pushes the button to the bottom */
+        }
+
+        .profile-button:hover {
+            background-color: #991b1b; /* Darker red on hover */
+        }
+
+        .developer-stats {
+            margin-top: 1rem;
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--light-text);
         }
 
         @media (max-width: 768px) {
@@ -998,8 +1038,13 @@
                     if (!response.ok) {
                         throw new Error(`Falha na API para ${username} (status ${response.status})`);
                     }
+                    const userData = await userResponse.json();
 
-                    const data = await response.json();
+                    const starredResponse = await fetch(`https://api.github.com/users/${username}/starred`);
+                    if (!starredResponse.ok) {
+                        throw new Error(`Falha ao buscar repositórios favoritos de ${username}`);
+                    }
+                    const starredData = await starredResponse.json();
                     
                     const name = data.name || data.login || 'Nome não disponível';
                     const avatar = data.avatar_url || `https://github.com/${username}.png`;
